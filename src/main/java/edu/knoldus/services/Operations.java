@@ -1,10 +1,6 @@
 package edu.knoldus.services;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-import java.time.ZoneId;
-import java.time.Period;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -49,11 +45,11 @@ public class Operations {
         return ZonedDateTime.of(currentDateAndTime, zoneId).format(TIME_FORMAT);
     }
 
-    public Integer getSecondsGandhiJiLived() {
+    public Long getSecondsGandhiJiLived() {
 
         LocalDate birthDate = LocalDate.of(1869, 10, 2);
-        LocalDate deathDate = LocalDate.of(1948, 01, 30);
-        return Period.between(birthDate, deathDate).getDays() * 86400;
+        LocalDate deathDate = LocalDate.of(1948, 1, 30);
+        return Duration.between(birthDate.atStartOfDay(),deathDate.atStartOfDay()).getSeconds();
 
     }
 
