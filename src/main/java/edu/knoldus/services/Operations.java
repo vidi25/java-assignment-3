@@ -1,6 +1,10 @@
 package edu.knoldus.services;
 
-import java.time.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -12,6 +16,7 @@ public class Operations {
 
     /**
      * finds day of week of birth date till today's date.
+     *
      * @param birthDate localDate object of birthDate
      * @return List of String of day of week
      */
@@ -28,6 +33,7 @@ public class Operations {
 
     /**
      * finds all leap years since 1900.
+     *
      * @return list of Integer of leap years
      */
     public List<Integer> findAllLeapYearsFrom1900() {
@@ -48,6 +54,7 @@ public class Operations {
 
     /**
      * calculates current time of a particular timezone.
+     *
      * @param timeZone String of timezone
      * @return String of current time
      */
@@ -61,13 +68,14 @@ public class Operations {
 
     /**
      * calculates number of seconds GandhiJi lived.
+     *
      * @return seconds of Long type
      */
     public Long getSecondsGandhiJiLived() {
 
         LocalDate birthDate = LocalDate.of(1869, 10, 2);
         LocalDate deathDate = LocalDate.of(1948, 1, 30);
-        return Duration.between(birthDate.atStartOfDay(),deathDate.atStartOfDay()).getSeconds();
+        return Duration.between(birthDate.atStartOfDay(), deathDate.atStartOfDay()).getSeconds();
 
     }
 
