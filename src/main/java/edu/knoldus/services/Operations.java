@@ -10,6 +10,11 @@ import java.util.stream.Stream;
 
 public class Operations {
 
+    /**
+     * finds day of week of birth date till today's date.
+     * @param birthDate localDate object of birthDate
+     * @return List of String of day of week
+     */
     public List<String> findDayOfWeekOfBirthDateTillDate(LocalDate birthDate) {
 
         List<String> dayOfWeekList = new ArrayList<>();
@@ -21,6 +26,10 @@ public class Operations {
         return dayOfWeekList;
     }
 
+    /**
+     * finds all leap years since 1900.
+     * @return list of Integer of leap years
+     */
     public List<Integer> findAllLeapYearsFrom1900() {
 
         List<Integer> leapYearsList = new ArrayList<>();
@@ -37,6 +46,11 @@ public class Operations {
         return leapYearsList;
     }
 
+    /**
+     * calculates current time of a particular timezone.
+     * @param timeZone String of timezone
+     * @return String of current time
+     */
     public String getTimeFromTimeZone(String timeZone) {
 
         ZoneId zoneId = ZoneId.of(timeZone);
@@ -45,6 +59,10 @@ public class Operations {
         return ZonedDateTime.of(currentDateAndTime, zoneId).format(TIME_FORMAT);
     }
 
+    /**
+     * calculates number of seconds GandhiJi lived.
+     * @return seconds of Long type
+     */
     public Long getSecondsGandhiJiLived() {
 
         LocalDate birthDate = LocalDate.of(1869, 10, 2);
